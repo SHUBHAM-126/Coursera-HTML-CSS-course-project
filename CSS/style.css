@@ -1,1 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap');
+:root{
+    --primary-color: #d0604c;
+    --secondary-color: #f2e0d2;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    box-sizing: border-box;
+}
+a, p{
+    font-weight: 400;
+}
+img{
+    width: 100%;
+}
+h1{
+    font-size: 2.4em;
+    line-height: 1.2em;
+}
+p{
+    font-size:1em;
+    line-height: 1.4em;
+}
+button{
+    background-color: var(--primary-color);
+    border:1px solid var(--primary-color);
+    padding:8px 25px;
+    color:#fff;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 400;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #fff;
+    color: var(--primary-color);
+}
+.logo{
+    text-align: center;
+    padding:10px;
+}
+.logo img{
+    height:110px;
+    width: auto;
+}
+.menu-links{
+    background-color: var(--secondary-color);
+    padding:8px 10px;
+}
+.menu-links ul{
+    display: flex;
+    justify-content: center;
+    gap:65px;
+    list-style-type: none;
+}
+.menu-links a{
+    text-decoration: none;
+    color:#333;
+    text-transform: uppercase;
+}
+.menu-links a:hover{
+    color: var(--primary-color);
+}
+.hero{
+    background-image: url('/images/Banner.jpg');
+    min-height: 70vh;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding:10px 5vw;
+    justify-content: center;
+}
+.hero h1, .hero p{
+    color:#fff;
+}
+.hero p{
+    font-weight:300;
+    margin-bottom: 5px  ;
+}
+.about{
+    padding:50px 5vw;
+}
+.about h2, .booking h2{
+    text-align: center;
+    font-size: 1.9em;
+    margin-bottom:20px;
+}
+.about p, .booking p{
+    text-align: center;
+    max-width: 1080px;
+    margin:auto;
+}
+.about .row{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;   
+    padding-top:30px;
+    text-align: center;
+}
+.about .row img{
+    margin-bottom: 15px;
+}
+.about .row h3{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.booking{
+    padding: 50px 5vw;
+    background-color: #f2e0d247;
+}
+.booking form{
+    max-width: 620px;
+    margin: auto;
+    padding-top:30px;
+}
+form label{
+    display: block;
+    margin-bottom: 4px;
+}
+form input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border:1px solid #333;
+    border-radius: 0;
+    padding:10px;
+    outline:none;
+    font-size: .9em;
+    box-sizing: border-box;
+}
+form input:focus:invalid{
+    border-color: red;
+}
+form button{
+    display: block;
+    margin:20px auto 0;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:30px 5vw;
+    border-top:1px solid #ddd;
+    gap:20px;
+}
 
+/*Only Desktop*/
+@media (min-width:767px){
+    .hero h1, .hero p{
+        max-width: 580px;
+    }
+}
+
+/*Mobile*/
+@media (max-width:767px){
+    .logo img{
+        height: 80px;
+    }
+    .menu-links ul{
+        gap:20px;
+        justify-content: space-between;
+    }
+    .menu-links ul li{
+        font-size:.9em;
+    }
+    .hero{
+        background-image: url('/images/Banner-mob.jpg');
+    }
+    h1{
+        font-size:1.8em;
+    }
+    .about .row{
+        grid-template-columns: 1fr;
+        gap:35px;
+    }
+    .about .row img{
+        margin-bottom:10px;
+    }
+    .footer{
+        flex-direction: column;
+    }
+}
